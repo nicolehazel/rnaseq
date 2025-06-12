@@ -25,7 +25,7 @@ process RSEM_PREPAREREFERENCE {
     def args_list = args.tokenize()
     if (args_list.contains('--star')) {
         args_list.removeIf { it.contains('--star') }
-        def memory = task.memory ? "--limitGenomeGenerateRAM ${task.memory.toBytes() - 100000000}" : ''
+        def memory = task.memory ? "--limitGenomeGenerateRAM ${task.memory.toBytes() - 200000000}" : ''
         """
         STAR \\
             --runMode genomeGenerate \\
