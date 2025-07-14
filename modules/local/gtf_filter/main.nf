@@ -4,7 +4,7 @@ process GTF_FILTER {
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/python:3.9--1' :
-        'biocontainers/python:3.9--1' }"
+        'docker.io/nicolehazel/luminos-rnaseq-python-runtime' }"
 
     input:
     path fasta
